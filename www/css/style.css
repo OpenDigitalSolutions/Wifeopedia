@@ -1,0 +1,83 @@
+body {
+    background-color: #666;
+}
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}
+
+input.ng-invalid.ng-dirty{background-color:pink}
+
+.ods-wrapper {
+	max-width:960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ods-wrapper-full {
+	width:100%;
+}
+
+.ods-wrapper h4 {
+	color:#eee;
+}
+
+.ods-header{
+	position: fixed;
+  	top: 0;
+  	left: 0;
+  	z-index: 99999;
+	background-color: #000;
+	padding:8px;
+}
+
+#headertitle{
+	color:#fff;
+	font-size: 1.2em;
+}
+
+#ods-splash{
+	text-align: center;
+}
+
+.ods-main {
+	background-color: #fff;
+	padding:0px;
+	-moz-box-shadow:    3px 3px 5px 6px #333;
+	-webkit-box-shadow: 3px 3px 5px 6px #333;
+	box-shadow:         3px 3px 5px 6px #333;
+}
+
+.ods-footer{
+	color: #ccc;
+	padding:8px;
+	font-size:0.9em;
+}
+
+.ods-copyright{
+	font-size:0.7em;
+	font-style: italic;
+}
+
+.ods-disclaimer a{
+	text-decoration: none;
+	font-size:0.75em;
+	cursor:pointer;
+}
+
+.ods-signinbox{
+	text-align:center;
+}
+
+#ods-presence{
+	color:#999;
+	margin-top:6px;
+	margin-right:12px;
+	margin-left:12px;
+	text-align:left;
+}

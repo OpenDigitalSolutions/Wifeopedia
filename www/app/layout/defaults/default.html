@@ -1,0 +1,70 @@
+<div data-ng-controller="defaultCtl as vm">
+	<div class="col-lg-7">
+		<div class="list-group" ng-show="vm.showLogin">
+			<p class="list-group-item-text">
+				<form name="form" class="bs-example form-horizontal">
+					<fieldset>
+						<legend>Login</legend>
+						<div class="form-group" ng-class="{'has-error': form.loginname.$invalid && form.loginname.$dirty, 'has-success': !form.loginname.$invalid}">
+							<label for="loginname" class="col-lg-2 control-label">Name: </label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" name="loginname" placeholder="MyUserName" ng-model="event.loginname" ng-minlength=3 ng-maxlength=50 required>
+								<p class="help-block error" ng-show="form.loginname.$dirty && form.loginname.$error.required">Required field!</p>
+                        		<p class="help-block error" ng-show="form.loginname.$error.minlength">Must be 3 or more characters!</p>
+                        		<p class="help-block error" ng-show="form.loginname.$error.maxlength">Must be less than 50 characters!</p>
+							</div>
+						</div>
+						<div class="form-group" ng-class="{'has-error': form.loginpass.$invalid && form.loginpass.$dirty, 'has-success': !form.loginpass.$invalid}">
+							<label for="loginpass" class="col-lg-2 control-label">Pass: </label>
+							<div class="col-lg-8">
+								<input type="password" class="form-control" name="loginpass" ng-model="event.loginpass" ng-minlength=3 ng-maxlength=50 required>
+								<p class="help-block error" ng-show="form.loginpass.$dirty && form.loginpass.$error.required">Required field!</p>
+                        		<p class="help-block error" ng-show="form.loginpass.$error.minlength">Must be 3 or more characters!</p>
+                        		<p class="help-block error" ng-show="form.loginpass.$error.maxlength">Must be less than 50 characters!</p>
+							</div>
+						</div>
+						<div class="form-group">
+						  <label class="col-lg-2 control-label">&nbsp;</label>
+	                      <button type="submit" class="btn btn-primary"  ng-disabled="form.$invalid" ng-click="doSubmit(event, form)" value="Submit">Submit</button>
+	                    </div>
+					</fieldset>
+				</form>
+			</p>
+		</div>
+		<div class="list-group" ng-show="vm.showSession">
+			<p class="list-group-item-text">
+				<div>username: {{username}}</div>
+				<div>address: {{address}}</div>
+				<div>timestamp: {{timestamp}}</div>
+				<div>roles: {{roles}}</div>
+				<hr>
+				<div>jwt: <textarea style="width:90%;height:120px;">{{jwt}}</textarea></div>
+			</p>
+		</div>
+	</div>
+
+	<div class="col-lg-5">
+		<div class="jumbotron">
+	        <p>{{vm.jumbomsg}}</p>
+	        <p><a class="btn btn-primary btn-lg" ng-click="logout()">Logout</a></p>
+	    </div>
+	    <p>
+	    	<a data-toggle="modal" data-target="#disclaimerPolicy">Terms / Privacy Policy</a>
+	    </p>
+	</div>
+
+	<div class="col-lg-7" ng-show="vm.showAPI">
+		<h2>Sample API</h2>
+		<ul>
+			<li><a href="" ng-click="gotoAPI('nojwt')">No Token Required</a></li>
+			<li><a href="" ng-click="gotoAPI('jwt')">Token Required</a></li>
+			<li><a href="" ng-click="gotoAPI('jwtrole')">Token Authorized Single Role</a></li>
+			<li><a href="" ng-click="gotoAPI('jwtroles')">Token Authorized Roles</a></li>
+		</ul>
+		<p>&nbsp;</p>
+	</div>
+</div>
+
+
+
+
